@@ -4,6 +4,20 @@ ESP32 wireless display.
 based on microython 1.14
 ![preview](.pc/preview.jpg)
 
+# Hardware
+st7565 LCD screen, 128x64.
+
+[JLX 12864G-928-PN](https://item.taobao.com/item.htm?id=599119650683)
+
+| GPIO | SCREEN    |
+| :--: | :-----:   |
+| 0    | LEDA      |
+| 2    | RS(CMD)   |
+| 4    | RST       |
+| 5    | CS        |
+| 13   | SCK       |
+| 14   | SDA(MOSI) |
+
 # Install and Useage
 Make sure ESP8266 is in the same network.
 
