@@ -1,0 +1,11 @@
+{
+    "files.eol": "\n",
+    "python.autoComplete.extraPaths": [
+        "lib",
+        ".pc/lib"
+    ],
+    "python.analysis.extraPaths": [
+        "lib",
+        ".pc/lib"
+    ]
+}
