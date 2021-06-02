@@ -30,12 +30,12 @@ _rs = Pin(2, Pin.OUT)
 # _mosi = Pin(13, Pin.OUT)
 _spi = SPI(1, baudrate=10000000, polarity=1, phase=1)
 screen = ST7565(128, 64, _spi, _rs, _cs, _rst)
-from ubmfont import FontDrawUnicode
-from resource import UNICODE_FNT_8
+# from ubmfont import FontDrawUnicode
+from bmfont import FontDrawAscii
 from framebuf_console import Console
 from machine import PWM
 backlight = PWM(Pin(0), freq=1000, duty=512) # duty from 0 to 1024
-console = Console(screen, 128, 64, font_draw=FontDrawUnicode(open(UNICODE_FNT_8, 'rb')), color=1, display_update_fun=lambda:screen.show())
+console = Console(screen, 128, 64, font_draw=FontDrawAscii(), color=1, display_update_fun=lambda:screen.show())
 # ========
 # setup finished
 
@@ -43,12 +43,12 @@ console = Console(screen, 128, 64, font_draw=FontDrawUnicode(open(UNICODE_FNT_8,
 # main programs
 import udp_handler
 from utime import sleep
-console.log('等待wifi连接')
+console.log('wait wifi...')
 while not wifi_sta.isconnected():
     console.log('.')
     sleep(1)
     pass
-console.log('wifi连接成功,ip地址:')
+console.log('wifi connected:')
 console.log(wifi_sta.ifconfig()[0])
 console.log(wifi_ap.ifconfig()[0])
 

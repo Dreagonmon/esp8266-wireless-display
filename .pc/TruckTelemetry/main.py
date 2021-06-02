@@ -48,8 +48,8 @@ def mps_to_kmph(mps):
 if __name__ == '__main__':
     hige_priority()
     # var
-    screen = LCD12864()
-    screen.backlight(10)
+    screen = LCD12864(("192.168.31.203", 10086))
+    screen.backlight(5)
     img = Image.new("1", (128, 64), 0)
     draw = ImageDraw.Draw(img)
     font8 = ImageFont.truetype(os.path.join(CURRENT_PATH, "guanzhi.ttf"), 8)
@@ -133,4 +133,5 @@ if __name__ == '__main__':
         # refresh screen
         pasteImage(img, screen)
         screen.show()
+        print("refresh")
         # break

@@ -49,9 +49,10 @@ def loadImage(index):
 if __name__ == '__main__':
     mixer.init()
     mixer.music.load(MP3_FILE)
-    # address = ('192.168.31.204', 10086)
-    screen = LCD12864()
-    screen.backlight(20)
+    address = ('192.168.31.203', 10086)
+    screen = LCD12864(address)
+    # screen = LCD12864()
+    screen.backlight(5)
     last_time = 0
     mixer.music.play()
     for i in range(1,3509):

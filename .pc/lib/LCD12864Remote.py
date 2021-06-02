@@ -9,14 +9,14 @@ CMD_SET_BACKLIGHT = 0x01
 CMD_PING = 0x02
 
 class LCD12864(framebuf.FrameBuffer):
-    def __init__(self, address=None):
+    def __init__(self, address=None, format=framebuf.MONO_VLSB):
         self.__last_show_time = 0
         self.buffer = bytearray(1024)
         self.address = address
         self.sender = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
         self.sender.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
         self.sender.settimeout(0.5)
-        super().__init__(self.buffer, 128, 64, framebuf.MONO_VLSB)
+        super().__init__(self.buffer, 128, 64, format)
         if self.address == None:
             try:
                 ip = socket.gethostbyname(socket.gethostname())
