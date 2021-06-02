@@ -29,7 +29,8 @@ wifi_password = 'YourWifiPassword'
 ```
 
 Use [mpypack](https://github.com/Dreagonmon/mpypack) to upload:
-```
+```bash
+pip install mpypack
 mpypack -p PORT sync
 ```
 
