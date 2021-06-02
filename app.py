@@ -1,15 +1,4 @@
-try:
-    import uos as os
-    import usys as sys
-except:
-    import os, sys
-from machine import reset
 import gc
-
-# type hint
-try:
-    from typing import Tuple, Optional
-except: pass
 
 # debug function
 def free():
