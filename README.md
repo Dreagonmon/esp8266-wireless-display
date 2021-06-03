@@ -1,6 +1,6 @@
 # esp8266-wireless-display
 
-ESP32 wireless display.
+ESP8266 wireless display.
 based on microython 1.14
 ![preview](.pc/preview.jpg)
 
